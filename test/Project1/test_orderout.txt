@@ -1,0 +1,9 @@
+
+
+Customer :Jim
+Item Ordered: WidgetSorba
+Unit Price: $20.99
+Total: $104.94999999999999
+
+Plus a $5.0 processing charge
+Grand Total: 109.94999999999999

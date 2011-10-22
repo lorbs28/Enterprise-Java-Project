@@ -1,0 +1,160 @@
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder readOrder
+INFO: Reading the order input file.
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder readOrder
+INFO: Done reading the order input file.
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder createOrder
+INFO: Creating the orders
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder createOrder
+INFO: Finished creating the orders
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder compileStringsForOutput
+INFO: Compiling output to send to GenericWriter.
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder compileStringsForOutput
+INFO: Done compiling output string to send to GenericWriter.
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder run
+INFO: Creating and running the object instance for GenericWriter class
+Oct 21, 2011 5:01:05 PM Project2.GenericWriter writeToFile
+INFO: Printing string as output
+Oct 21, 2011 5:01:05 PM Project2.GenericWriter writeToFile
+INFO: Done printing string
+Oct 21, 2011 5:01:05 PM Project2.GenericWriter run
+INFO: Killing the thread for GenericWriter.
+Oct 21, 2011 5:01:05 PM Project1.ProcessOrder run
+INFO: Creating and running the object instance for GenericScanner class
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder readOrder
+INFO: Reading the order input file.
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder readOrder
+INFO: Done reading the order input file.
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder createOrder
+INFO: Creating the orders
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder createOrder
+INFO: Finished creating the orders
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder compileStringsForOutput
+INFO: Compiling output to send to GenericWriter.
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder compileStringsForOutput
+INFO: Done compiling output string to send to GenericWriter.
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder run
+INFO: Creating and running the object instance for GenericWriter class
+Oct 21, 2011 5:02:06 PM Project1.ProcessOrder run
+INFO: Creating and running the object instance for GenericScanner class
+Oct 21, 2011 5:02:06 PM Project2.GenericWriter writeToFile
+INFO: Printing string as output
+Oct 21, 2011 5:02:06 PM Project2.GenericWriter writeToFile
+INFO: Done printing string
+Oct 21, 2011 5:02:06 PM Project2.GenericWriter run
+INFO: Killing the thread for GenericWriter.
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder run
+INFO: Thread Determiner = FALSE, running application sequentially.
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder readOrder
+INFO: Reading the order input file.
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder readOrder
+INFO: Done reading the order input file.
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder createOrder
+INFO: Creating the orders
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder createOrder
+INFO: Finished creating the orders
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder writeOutput
+INFO: Writing output to output file.
+Oct 21, 2011 5:06:12 PM Project1.ProcessOrder writeOutput
+INFO: Done writing output to output file.
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder readOrder
+INFO: Reading the order input file.
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder readOrder
+INFO: Done reading the order input file.
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder createOrder
+INFO: Creating the orders
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder readCharges
+INFO: Reading the charges file.
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder readCharges
+INFO: Done reading the charges file.
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder createOrder
+INFO: Finished creating the orders
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder compileStringsForOutput
+INFO: Compiling output to send to GenericWriter.
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder compileStringsForOutput
+INFO: Done compiling output string to send to GenericWriter.
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder run
+INFO: Creating and running the object instance for GenericWriter class
+Oct 21, 2011 5:06:29 PM Project2.GenericWriter writeToFile
+INFO: Printing string as output
+Oct 21, 2011 5:06:29 PM Project2.GenericWriter writeToFile
+INFO: Done printing string
+Oct 21, 2011 5:06:29 PM Project2.GenericWriter run
+INFO: Killing the thread for GenericWriter.
+Oct 21, 2011 5:06:29 PM Project1.ProcessOrder run
+INFO: Creating and running the object instance for GenericScanner class

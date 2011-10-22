@@ -1,0 +1,7 @@
+grant {
+    permission java.util.PropertyPermission  "*", "read,write";
+    permission java.io.FilePermission "orderin.txt", "read";
+    permission java.io.FilePermission "properties.ini", "read";
+    permission java.io.FilePermission "charges.dat", "read";
+    permission java.io.FilePermission "orderout.txt", "read,write";  
+};

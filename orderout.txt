@@ -1,0 +1,41 @@
+
+
+Customer :Doe
+Item Ordered: SomethingOrOther
+Unit Price: $13.05
+Total: $13.05
+
+Plus a $4.0 processing charge
+Grand Total: 17.05
+
+Customer :Jackson
+Item Ordered: Whatchamacallit
+Unit Price: $14.57
+Total: $72.85
+
+Plus a $5.0 processing charge
+Grand Total: 77.85
+
+Customer :Bro
+Item Ordered: SomethingOrOthers
+Unit Price: $13.05
+Total: $13.05
+
+Plus a $4.0 processing charge
+Grand Total: 17.05
+
+Customer :Smith
+Item Ordered: Thingamajig
+Unit Price: $15.35
+Total: $184.2
+
+Plus a $7.0 processing charge
+Grand Total: 191.2
+
+Customer :Jones
+Item Ordered: Widget
+Unit Price: $12.99
+Total: $90.93
+
+Plus a $6.0 processing charge
+Grand Total: 96.93
