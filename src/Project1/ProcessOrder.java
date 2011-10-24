@@ -334,8 +334,6 @@ public class ProcessOrder {
             /*
              * If the threadDeterminer is false, then it should run sequentially
              */
-            
-            
             myLogger.log(Level.INFO, "Thread Determiner = FALSE, running application sequentially.");
 
             readOrder();

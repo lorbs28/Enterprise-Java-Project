@@ -25,9 +25,9 @@ public class GenericScanner extends Thread {
     public GenericScanner(Map orders) {
         this();   
         
-        this.orders = orders;
+        this.setOrders(orders);
         
-        orderSize = orders.size();
+        this.setOrderSize(orders.size());
     }
 
     public int getCurrentOrderSize() {
