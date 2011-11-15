@@ -1,6 +1,7 @@
-package Project1;
+package Project;
 
 
+import java.io.*;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -26,9 +27,11 @@ public class OrderTestSuite extends TestCase {
     public static Test suite() {
         TestSuite suite = new TestSuite("OrderTestSuite");
         
-        suite.addTest(new ProcessOrderTest("testProcessOrderTest"));
-        suite.addTest(new OrderTest("testOrderTest"));
-        suite.addTest(new OrderDriverTest("testOrderDriverTest"));
+            
+            suite.addTest(new ProcessOrderTest("testProcessOrderTest"));
+            suite.addTest(new OrderTest("testOrderTest"));
+            suite.addTest(new OrderDriverTest("testOrderDriverTest"));
+        
         
         return suite;
     }

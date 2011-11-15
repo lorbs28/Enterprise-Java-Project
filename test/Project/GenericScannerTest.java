@@ -1,23 +1,26 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package Project2;
+package Project;
 
+import Project2.GenericScanner;
 import java.io.*;
 import java.util.*;
 import java.util.logging.*;
 import junit.framework.TestCase;
 
 /**
- *
- * @author lorbs28
- */
-public class GenericScannerTest extends TestCase {
+ * Class:         GenericScannerTest
+ * Function/Duty: This class is the unit test for the GenericScanner class
+ * 
+ * @author Bryan Lor
+ */public class GenericScannerTest extends TestCase {
+    
+    public GenericScannerTest() {
+        
+    }
     
     public GenericScannerTest(String testName) {
         super(testName);
     }
+
     
     @Override
     protected void setUp() throws Exception {
@@ -28,19 +31,9 @@ public class GenericScannerTest extends TestCase {
     protected void tearDown() throws Exception {
         super.tearDown();
     }
-//
-//    /**
-//     * Test of run method, of class GenericScanner.
-//     */
-//    public void testRun() {
-//        System.out.println("testing run for generic scanner");
-//        GenericScanner instance = new GenericScanner();
-//        instance.run();
-//    }
-//
+
     public void testGenericScannerTest()throws FileNotFoundException, IOException {
         testCheckLedger();
-        testAllStop();
         testToString();
     }
     
@@ -66,20 +59,21 @@ public class GenericScannerTest extends TestCase {
             /*
              * Delete the current log file if it exists prior to creating a new log
              */
-            File file = new File("test/Project2/testsys.log");
+            File file = new File("test/Project/testsys.log");
             
             file.delete();
             
+            // Determine the operating system
             if(System.getProperty("os.name").indexOf("Windows") >= 0)  //determine type of OS
             {
                 //use Windows filesystem if on Windows
-                oFileHandler = new FileHandler("test/Project2/testsys.log", true);
+                oFileHandler = new FileHandler("test/Project/testsys.log", true);
                 oFileHandler.setFormatter(new SimpleFormatter());
             }
             else
             {
                 //use *nix filesystem if on some flavor of unix
-                oFileHandler = new FileHandler("test/Project2/testsys.log", true);
+                oFileHandler = new FileHandler("test/Project/testsys.log", true);
                 oFileHandler.setFormatter(new SimpleFormatter());
             }
 
@@ -126,6 +120,7 @@ public class GenericScannerTest extends TestCase {
          */
         if (newCurrentSize > currentSize) {
             testLogger.log(Level.INFO, expectedLogString);
+            currentSize = newCurrentSize;
         } else {
             fail("Entry failed to be inserted into log for entry changes.");
         }
@@ -134,7 +129,7 @@ public class GenericScannerTest extends TestCase {
          * Prepare a reader to read the log entries back
          */
         BufferedReader  br  = new BufferedReader(new FileReader(
-                    "test/Project2/testsys.log"));
+                    "test/Project/testsys.log"));
         
         List resultStringArray = new ArrayList();
         
@@ -164,18 +159,10 @@ public class GenericScannerTest extends TestCase {
     }
 
     /**
-     * Test of allStop method, of class GenericScanner.
-     */
-    public void testAllStop() {
-        System.out.println("allStop");
-        GenericScanner instance = new GenericScanner();
-    }
-
-    /**
      * Test of toString method, of class GenericScanner.
      */
     public void testToString() {
-        System.out.println("toString");
+        System.out.println("testing GenericScanner toString");
         GenericScanner instance = new GenericScanner();
         Map expectedMap = new Hashtable();
         
@@ -200,6 +187,14 @@ public class GenericScannerTest extends TestCase {
                 + expectedMap;
         String resultToString = instance.toString();
         
+        /*
+         * Determine if the toString is null or has a length of zero
+         */
+        if(resultToString == null || resultToString.trim ().length () == 0)
+        {
+            fail("The toString failed.  Either null or has nothing.");
+        }
+
         /*
          * Test to make sure both toString outputs match
          */

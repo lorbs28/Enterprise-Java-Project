@@ -1,10 +1,11 @@
-package Project1;
+package Project;
 
 
-import Project1.ProcessOrder;
-import Project1.Order;
+import Project1.*;
+import Project2.*;
 import java.io.*;
 import java.util.*;
+import javax.xml.parsers.ParserConfigurationException;
 import junit.framework.TestCase;
 
 /**
@@ -31,13 +32,10 @@ public class ProcessOrderTest extends TestCase {
     /**
      * Method called from the test suite to run all tests in this class
      */
-    public void testProcessOrderTest() throws IOException {
-        testReadOrder();
-        testReadCharges();
-        testCreateOrder();
-        testWriteOutput();
+    public void testProcessOrderTest() throws Exception, ParserConfigurationException {
+        System.out.println("TESTING: ProcessOrderTest");
+        testRun(); 
         testToString();
-        
     }
 
     /**
@@ -260,7 +258,7 @@ public class ProcessOrderTest extends TestCase {
         
         // Write to the file
         PrintWriter  pr  = new PrintWriter(new BufferedWriter(
-                    new FileWriter("test/Project1/test_orderout.txt")));
+                    new FileWriter("test/Project/test_orderout.txt")));
         
         Iterator  i  = expOrders.entrySet().iterator();
         
@@ -280,7 +278,7 @@ public class ProcessOrderTest extends TestCase {
         
         // Read the file to check if what was written to the file is correct
         BufferedReader  br  = new BufferedReader(new FileReader(
-                    "test/Project1/test_orderout.txt"));
+                    "test/Project/test_orderout.txt"));
         
         // While the reader is ready, read each line and add them as a String
         // to the array list.
@@ -308,6 +306,195 @@ public class ProcessOrderTest extends TestCase {
         // test to see if something was written to a test file by writing then 
         // pull from
         // that test file to see if something was written
+    }
+    
+    /**
+     * Test of compileStringsForOutput method, of class ProcessOrder.
+     */
+    public void testCompileStringsForOutput() {
+        System.out.println("testing compileStringsForOutput");
+        ProcessOrder instance = new ProcessOrder();
+        Map expMap = new Hashtable();
+        String expResult = "Customer: Jim\n" 
+                + "Item Ordered: WidgetSorbaThingers \n" 
+                + "Unit Price: $20.99\n"
+                + "Total: $104.95\n"
+                + "Plus a $5.0 processing charge\n"
+                + "Grand Total: 109.95";
+        
+        /*
+         * Put the expected result string in the expected map variable
+         */
+        expMap.put(1, expResult);
+        
+        /*
+         * Test to make sure that the string was set so the map isn't empty or has
+         * a size less than 1
+         */
+        if (expMap.isEmpty() || expMap.size() < 1) {
+            fail("Map is empty.");
+        }
+        /*
+         * Set the orders map from ProcessOrder with the expected map
+         */
+        instance.setOrders(expMap);
+        
+        /*
+         * Test to make sure the map is set correctly
+         */
+        assertEquals(expMap, instance.getOrders());
+        
+        /*
+         * Call the order map from the ProcessOrder class
+         */
+        Map resultMapOrders = instance.getOrders();
+        
+        /*
+         * Set the iterator for the map
+         */
+        Iterator  i  = resultMapOrders.entrySet().iterator();
+        
+        String result = "";
+
+        
+        
+        
+        /*
+         * Iterate through the map entry set and add the values to the String variable
+         * for result
+         */
+            while (i.hasNext()) {
+                Map.Entry  me  = (Map.Entry) i.next(); 
+                result += me.getValue();
+            }
+        
+        /*
+         * Test to make sure the result string is not null or has a length of zero 
+         */
+        if(result == null || result.trim ().length () == 0) {
+            fail("The map didn't return anything.");
+        }
+        
+        /*
+         * Test to make sure that the expected results match the results coming in.
+         */
+        assertEquals(expResult, result);
+        
+        //System.out.println(result);
+        
+        return;
+    }
+    
+    public void testRun() throws ParserConfigurationException, Exception {
+        System.out.println("testing ProcessOrder run");
+        
+        /*
+         * Load properties file to get the multithread switch
+         */
+        try {
+            
+            System.getProperties().load(new FileInputStream("properties.ini"));
+        
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        System.setProperty("multi.thread", "true");
+        System.setProperty("xml.switch", "true");
+        boolean threadDeterminer = Boolean.parseBoolean(System.getProperty("multi.thread"));
+        boolean xmlSwitch = Boolean.parseBoolean(System.getProperty("xml.switch"));
+        
+        /*
+         * Determine if the XML switch is true or false
+         */
+        if (xmlSwitch) {
+            System.out.println("XML SWITCH ON: MODULE THREE");
+            OrderSAXParserTest testSAXParser = new OrderSAXParserTest();
+            OrderDOMParserTest testDOMParser = new OrderDOMParserTest();
+            
+            // run SAXParser tests
+            testSAXParser.testOrderSAXParserTest();
+            // run DOMParser tests
+            testDOMParser.testOrderDOMParserTest();
+            
+            
+        } else {
+            fail("XML switch was supposed to be set to TRUE, but was FALSE.");
+        }
+        
+        /*
+         * Determine if the thread determiner is true or false
+         */        
+        if (threadDeterminer) {
+            System.out.println("MULTI-THREAD ON: MODULE TWO");
+            GenericScannerTest testScanner = new GenericScannerTest();
+            GenericWriterTest testWriter = new GenericWriterTest();
+            
+            Map expOrders = new Hashtable();
+            expOrders.put(1, "testOne");
+            expOrders.put(2, "testTwo");
+            
+            /*
+             * Invoke the Generic Scanner test suite
+             */
+            testScanner.testGenericScannerTest();
+
+            GenericScanner scanner = new GenericScanner(expOrders);
+            Thread sThread = new Thread(scanner);
+            
+            assertEquals(expOrders, scanner.getOrders());
+            
+            /*
+             * Test to see if the scanner is null
+             */
+            if (scanner == null || sThread == null) {
+                fail("The scanner is null.");
+            }
+            
+            testReadOrder();
+            testCreateOrder();
+            testCompileStringsForOutput();
+            
+            String expString = "test string for generic writer";
+            
+            /*
+             * Invoke the Generic Writer test suite
+             */
+            testWriter.testGenericWriterTest();
+            
+            GenericWriter writer = new GenericWriter(expString);
+            //Thread wThread = null;
+            Thread wThread = new Thread(writer);
+            
+            assertEquals(expString, writer.getLedgerOutput());
+            
+            /*
+             * Test to see if the writer is null
+             */
+            if (writer == null || wThread == null) {
+                fail("The scanner is null.");
+            }
+            
+        } else {
+            fail("Multi-thread indicator should have been TRUE, but was FALSE.");
+        }
+        
+        System.setProperty("multi.thread", "false");
+        
+        threadDeterminer = Boolean.parseBoolean(System.getProperty("multi.thread"));
+        
+        if (!threadDeterminer) {
+            System.out.println("MULTI-THREAD OFF: MODULE ONE");
+            testReadOrder();
+            testCreateOrder();
+            testWriteOutput();
+        } else {
+            fail("Multi-thread indicator should have been FALSE, but was TRUE.");
+        }
+        
+        return;
     }
     
     public void testToString() {

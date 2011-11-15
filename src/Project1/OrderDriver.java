@@ -1,8 +1,7 @@
 package Project1;
 
-
-import Project2.*;
 import java.util.*;
+import java.util.logging.*;
 import java.io.*;
 
 /**
@@ -34,24 +33,22 @@ public class OrderDriver {
      * @throws OrderCustomException
      */
     public static void main(String[] args) throws OrderCustomException{
-        new SysLogger().init();
-        
         ProcessOrder  p  = new ProcessOrder();
         OrderDriver d = new OrderDriver();
-        
         Properties properties = new Properties();
         
-        // Load the SecurityManager with the security policy
-        if(true)
-        {
+        if (true) {
             System.getProperties().setProperty("java.security.policy",
                     "/Users/lorbs28/NetBeansProjects/Project/security_policy.policy");
-            System.setSecurityManager(new SecurityManager());     
+            System.setSecurityManager(new SecurityManager());
         }
-        
-        
+        // Load the properties file
         d.loadProperties();
         
+        // Initialize the logger
+        d.createLoggerAndLog();
+        
+        // Run the application
         p.run();
     }
     
@@ -77,6 +74,43 @@ public class OrderDriver {
             ioe.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+    
+    public void createLoggerAndLog()
+    {
+        String logName = System.getProperty("log.name");
+        String logFile = System.getProperty("log.filename");
+        Logger myLogger = Logger.getLogger(logName);  //creates a logger with this name
+        FileHandler oFileHandler;
+        
+        try
+        {
+            //establishes the file that will be used for logging; the boolean
+            //configures it to append to the file and sets the formatting for the entries
+            if(System.getProperty("os.name").indexOf("Windows") >= 0)  //determine type of OS
+            {
+                //use Windows filesystem if on Windows
+                oFileHandler = new FileHandler(logFile, true);
+                oFileHandler.setFormatter(new SimpleFormatter());
+            }
+            else
+            {
+                //use *nix filesystem if on some flavor of unix
+                oFileHandler = new FileHandler(logFile, true);
+                oFileHandler.setFormatter(new SimpleFormatter());
+            }
+
+            myLogger.addHandler(oFileHandler);  //establishes the handler for the logging facility
+            myLogger.setLevel(Level.ALL);  //specifies that all messages be logged
+
+            
+
+        }
+        catch(Exception Ex)
+        {
+            System.out.println("*** Could not initialize the logger for our application ***");
+            Ex.printStackTrace();
         }
     }
     

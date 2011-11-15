@@ -241,13 +241,15 @@ public class Order {
      * @return
      */
     public String display() {
-        return "\n" + "\nCustomer :" + getCustomerName() +
+        String display = "\n" + "\nCustomer :" + getCustomerName() +
                 "\nItem Ordered: " + getItem() +
                 "\nUnit Price: $" + getUnitPrice() +
                 "\nTotal: $" + getExtendedPrice() +
                 "\n" +
                 "\nPlus a $" + getHandlingCharge() + " processing charge" +
                 "\nGrand Total: " + (getExtendedPrice() + getHandlingCharge());
+        
+        return display;
     }
     
     
@@ -259,7 +261,7 @@ public class Order {
      * @return
      */
     public String toString() {
-        return "\nCustomer :" + getCustomerName() +
+        return "\nCustomer: " + getCustomerName() +
                 "\nItem Ordered: " + getItem() +
                 "\nUnit Price: $" + getUnitPrice() +
                 "\nQuantity Ordered: " + getQuantity() +

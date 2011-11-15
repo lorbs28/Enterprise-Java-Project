@@ -1,4 +1,4 @@
-package Project1;
+package Project;
 
 
 import java.io.*;
@@ -30,6 +30,7 @@ public class OrderDriverTest extends TestCase {
      * Method called from the test suite to run all tests in this class
      */
     public void testOrderDriverTest() throws IOException {
+        System.out.println("TESTING: OrderDriverTest");
         testLoadProperties();
         
     }

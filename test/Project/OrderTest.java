@@ -1,6 +1,7 @@
-package Project1;
+package Project;
 
 
+import Project1.Order;
 import Project1.Order;
 import junit.framework.TestCase;
 
@@ -29,6 +30,7 @@ public class OrderTest extends TestCase {
      * Method called from the test suite to run all tests in this class
      */
     public void testOrderTest() {
+        System.out.println("TESTING: OrderTest");
         testCalExtendedPrice();
         testCalHandlingCharge();
         testDisplay();

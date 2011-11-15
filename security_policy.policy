@@ -1,7 +1,12 @@
 grant {
     permission java.util.PropertyPermission  "*", "read,write";
     permission java.io.FilePermission "orderin.txt", "read";
+    permission java.io.FilePermission "orderin.xml", "read";
     permission java.io.FilePermission "properties.ini", "read";
     permission java.io.FilePermission "charges.dat", "read";
-    permission java.io.FilePermission "orderout.txt", "read,write";  
+    permission java.io.FilePermission "orderout.txt", "read,write";
+    permission java.io.FilePermission "orderout_NEW.xml", "read,write";
+    permission java.io.FilePermission "mysys.log.lck", "read,write";
+    permission java.io.FilePermission "mysys.log", "read,write";
+    permission java.util.logging.LoggingPermission "control";
 };
